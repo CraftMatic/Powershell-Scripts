@@ -8,3 +8,6 @@ This tool is used to pull data from an azure storage account and convert it to C
 
 **VM OS Version tool**
 This tool pulls all vms from a subscription and puts their Computername, OS Name, OS Version and source subscription into a CSV file. This allows for easier data integration for automation books or import into power BI.
+
+**JSON to CSV Conversion tool (Data format version)**
+This tool is also a JSON to CSV conversion tool. This tool however is suited for data formatted json instead of table formatted.
