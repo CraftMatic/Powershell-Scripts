@@ -41,7 +41,28 @@ foreach ($row in $table) {
     }
     $csvData += $rowData
 }
+#Way to iterate through multiple arrays in the event json data is paginated
+<#
+foreach ($item in $jsonContent) {
+    # Check if the object contains a 'value' property
+    if ($item.PSObject.Properties.Name -contains "value") {
+        # Get the 'value' array
+        $valueArray = $item.value
+        
+        # Extract columns from the first object in the 'value' array
+        $columns = $valueArray[0].PSObject.Properties.Name
 
+        # Loop through each row in the 'value' array
+        foreach ($row in $valueArray) {
+            $rowData = [PSCustomObject]@{}
+            foreach ($column in $columns) {
+                $rowData | Add-Member -MemberType NoteProperty -Name $column -Value $row.$column
+            }
+            $csvData += $rowData
+        }
+    }
+}
+#>
 # Export data and write it to csv format
 $outputCsvPath = "$env:temp\output_$($i+1)_$(Get-Date -Format 'yyyy-MM-dd HH-mm-ss').csv"
 $csvData | Export-Csv -Path $outputCsvPath -NoTypeInformation
