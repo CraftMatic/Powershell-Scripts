@@ -11,3 +11,6 @@ This tool pulls all vms from a subscription and puts their Computername, OS Name
 
 **JSON to CSV Conversion tool (Data format version)**
 This tool is also a JSON to CSV conversion tool. This tool however is suited for data formatted json instead of table formatted.
+
+**Azure Role Assignement Grabber Utility**
+This tool is used to generate a summary csv list for all security group, and user role assignments for resources in Azure. This is useful when moving from one cloud environment to another as it automates the generation of a list and is able to update the UPN for the accounts so importing into the next environment is easier. 
