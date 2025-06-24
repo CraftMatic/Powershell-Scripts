@@ -17,3 +17,6 @@ This tool is used to generate a summary csv list for all security group, and use
 
 **Git Repo Migration Tool.**
 This tool migrated git repos from one Azure Devops instance to another using native REST API. This avoids having to use az devops extension. 
+
+**Recover Repo Tool**
+This tool recovers a deleted repositry by using the patch method ont the devops api native Azure devops. You will need to retrieve the ID from the repo that was deleted before running this. 
