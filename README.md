@@ -20,3 +20,18 @@ This tool migrated git repos from one Azure Devops instance to another using nat
 
 **Recover Repo Tool**
 This tool recovers a deleted repositry by using the patch method ont the devops api native Azure devops. You will need to retrieve the ID from the repo that was deleted before running this. 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**Azure Devops Migrations**
+This directory holds several scripts that can migrate azure devops work items over to a new instance of Azure devops. Functionally I created this script to allow users to migrate ADO work items in a step by step approach.
+NOTE: You will need a field called legacyID that will get populated by old work item ID of the script. It will not work without this customer field created beforehand.
+
+The workflow goes like this :
+
+1. ADO_work_Item_migration_tool.ps1 - This script migrates a plain text (does not support rich text, it actually actively strips rich texts) version of the work items to a new Azure Devops instance.
+2. Parent_finder-V3.ps1 - This tools maps previous parent child relationships from your previous instance into the new instance.
+3. ADO_related_work_items_mapper - This script adds related links back to work items post migration.
+4. ADO_Work_item_state_mapper.ps1 - This script updates the states for all work items to their states in the previous instance.
+
+   
